@@ -83,7 +83,6 @@ class EstateModel(models.Model):
     def cancel_action(self):
         self.write({'state': 'canceled'})
 
-
     @api.constrains('selling_price', 'expected_price')
     def check_price(self):
         for record in self:
