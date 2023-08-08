@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Action for estate.property -->
+    <record id="estate_model_action" model="ir.actions.act_window">
+        <field name="name">Estate</field>
+        <field name="res_model">estate.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Action for estate.property.type -->
+    <record id="action_estate_property_type" model="ir.actions.act_window">
+        <field name="name">Property Types</field>
+        <field name="res_model">estate.property.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Action for estate.property.tag -->
+    <record id="action_estate_property_tag" model="ir.actions.act_window">
+        <field name="name">Property Tag</field>
+        <field name="res_model">estate.property.tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

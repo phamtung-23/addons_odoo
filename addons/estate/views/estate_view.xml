@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="estate_model_view_tree" model="ir.ui.view">
+        <field name="name">estate.model.view.tree</field>
+        <field name="model">estate.model</field>
+        <field name="arch" type="xml">
+            <tree string="Estate_model">
+                <field name="name" />
+                <field name="property_type_id" />
+                <field name="description" />
+                <field name="postcode" />
+                <field name="date_availability" />
+                <field name="expected_price" />
+                <field name="selling_price" />
+                <field name="bedrooms" />
+                <field name="facades" />
+                <field name="garades" />
+                <field name="garden_area" />
+                <field name="garden_orientation" />
+                <field name="living_area" />
+                <field name="active" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="estate_model_view_form" model="ir.ui.view">
+        <field name="name">estate.model.view.form</field>
+        <field name="model">estate.model</field>
+        <field name="arch" type="xml">
+            <form string="Estate_model">
+                <header>
+                    <button string="SOLD" class="btn btn-success" states="new,offer_received,offer_accepted" type="object" name="sold_action"/>
+                    <button string="CANCEL" class="btn btn-danger" states="new,offer_received,offer_accepted" type="object" name="cancel_action"/>
+                    <field name="state" widget="statusbar" statusbar_visible="new,offer_received,offer_accepted,sold,canceled"/>
+                </header>
+                <sheet class="border">
+                    <group>
+                        <field name="name" class="fs-1 font-weight-bold"/>
+                    </group>
+                    <group>
+                        <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                    </group>
+                    <group>
+                        <field name="property_type_id" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                    </group>
+                    <group>
+                        <field name="description" />
+                    </group>
+                    <group>
+                        <field name="selling_price" />
+                    </group>
+                    <notebook>
+                        <page string="Detail">
+                            <group>
+                                <group>
+                                    <field name="postcode" />
+                                    <field name="date_availability" />
+                                    <field name="expected_price" />
+                                    <field name="living_area" />
+                                    <field name="active" />
+                                    <field name="total_erea" />
+                                    <field name="bedrooms" />
+                                </group>
+                                <group>
+                                    <field name="facades" />
+                                    <field name="garades" />
+                                    <field name="garden_area" attrs="{'invisible': [('garades', '=', False)]}"/>
+                                    <field name="garden_orientation" attrs="{'invisible': [('garades', '=', False)]}"/>
+                                    <field name="state" />
+                                    <field name="best_price" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Other info">
+                            <group>
+                                <!-- <field name="salesperson_id" />
+                                <field name="buyer_id" /> -->
+                                <field name="buyer_id"/>
+                                <field name="salesperson_id"/>
+                            </group>
+                        </page>
+                        <page string="Offers">
+                            <group>
+                                <field name="offer_ids"  attrs="{'readonly': [('state', 'in', ('offer_accepted', 'sold', 'canceled'))]}"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="estate_model_view_search" model="ir.ui.view">
+        <field name="name">estate.model.view.search</field>
+        <field name="model">estate.model</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="description"/>
+                <field name="postcode"/>
+                <field name="date_availability"/>
+                <field name="expected_price"/>
+                <field name="selling_price"/>
+                <field name="bedrooms"/>
+                <field name="facades"/>
+                <field name="garades"/>
+                <field name="garden_area"/>
+                <field name="garden_orientation"/>
+                <field name="living_area"/>
+                <field name="active"/>
+                <field name="state"/>
+
+                <filter name="state_new" domain="[('state', '=', 'new')]"/>
+                <filter name="state_offer_received" domain="[('state', '=', 'offer_received')]"/>
+
+                <group expand="0" string="Group Filters">
+                    <filter name="filter_group_postcode" string="Postcode" context="{'group_by': 'postcode'}"/>
+                    <!-- Add more filters -->
+                </group>
+            </search>
+        </field>
+    </record>
+    <!-- <menuitem
+        id="estate_model_menu"
+        name="Estate"
+        sequence="10"/>
+    <menuitem
+        id="estate_model_menu_1"
+        name="Estate"
+        action="estate_model_action"
+        parent="estate_model_menu"
+        sequence="10"/> -->
+</odoo>
