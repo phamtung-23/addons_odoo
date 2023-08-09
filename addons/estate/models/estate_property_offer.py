@@ -50,4 +50,19 @@ class EstatePropertyOffer(models.Model):
     def button_cancel(self):
         self.write({'status': 'refused'})
 
+    
+    # @api.model
+    # def create(self, vals):
+    #     offer = super(EstatePropertyOffer, self).create(vals)
+    #     if offer.property_id:
+    #         offer.property_id.write({'state': 'offer_received'})
+    #     return offer
+
+    @api.model
+    def create(self, vals):
+        offer = super(EstatePropertyOffer, self).create(vals)
+        if self.env['estate.model'].browse(vals['property_id']):
+            self.env['estate.model'].browse(vals['property_id']).write({'state': 'offer_received'})
+        return offer
+
             
