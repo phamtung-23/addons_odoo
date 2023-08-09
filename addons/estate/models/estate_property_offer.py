@@ -60,9 +60,14 @@ class EstatePropertyOffer(models.Model):
 
     @api.model
     def create(self, vals):
+        estate_id = self.env['estate.model'].browse(vals['property_id'])
         offer = super(EstatePropertyOffer, self).create(vals)
-        if self.env['estate.model'].browse(vals['property_id']):
-            self.env['estate.model'].browse(vals['property_id']).write({'state': 'offer_received'})
+
+        if estate_id.offer_ids:
+            if vals.get('price', 0.0) < max(estate_id.offer_ids.mapped('price')):
+                raise exceptions.UserError('The new offer amount must be higher than existing offers!'+ str(vals.get('price', 0.0))+"max-price:"+ str(max(estate_id.offer_ids.mapped('price'), default=0.0)))
+        if estate_id.state == 'new':    
+            estate_id.write({'state': 'offer_received'})
         return offer
 
-            
+
