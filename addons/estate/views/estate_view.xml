@@ -103,10 +103,13 @@
                 <field name="garades"/>
                 <field name="garden_area"/>
                 <field name="garden_orientation"/>
-                <field name="living_area"/>
+                <field name="living_area" filter_domain="[('living_area', '&gt;=', self)]"/>
                 <field name="active"/>
                 <field name="state"/>
-
+                
+                <separator/>
+                <filter name="Available" string="Active" domain="[('active','=',True)]" help="Show only active"/>
+                <separator/>
                 <filter name="state_new" domain="[('state', '=', 'new')]"/>
                 <filter name="state_offer_received" domain="[('state', '=', 'offer_received')]"/>
 
