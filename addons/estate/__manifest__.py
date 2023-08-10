@@ -6,6 +6,10 @@
     'summary': 'This is my new module!',
     'sequence': 10, 
     'description': "estate estate estate",
+    "depends": [
+        "base",
+        "web",
+    ],
     'data': [
         'security/estate_model_security.xml',
         'security/ir.model.access.csv',
@@ -15,5 +19,6 @@
         'views/estate_type_view.xml',
         'views/estate_tag_view.xml',
         'views/estate_offer_view.xml',
+        'views/res_users_form_inheritance_view.xml',
     ],
 }
