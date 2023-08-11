@@ -5,7 +5,7 @@
     <record id="estate_model_action" model="ir.actions.act_window">
         <field name="name">Estate</field>
         <field name="res_model">estate.model</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban</field>
         <field name="context">{'search_default_active': True}</field>
     </record>
 
