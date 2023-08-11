@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_view_tree" model="ir.ui.view">
+        <field name="name">my.module.product.view.tree</field>
+        <field name="model">my.module.product</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="category_id" widget='badge' />
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+    <record id="product_view_form" model="ir.ui.view">
+        <field name="name">my.module.product.view.form</field>
+        <field name="model">my.module.product</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group >
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="category_id"  options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
