@@ -23,16 +23,14 @@ class EstateProperty(models.Model):
                 'name': 'Property Sale - 6% of Selling Price',
                 'quantity': 1,
                 'price_unit': selling_price * 0.06,
-                'account_id': self.env.ref('account.income_account_sale').id,  # Replace with actual account id
             },
             {
                 'name': 'Administrative Fees',
                 'quantity': 1,
                 'price_unit': administrative_fees,
-                'account_id': self.env.ref('account.income_account_other_income').id,  # Replace with actual account id
             }
         ]
-
+ 
         # Create invoice lines
         invoice_line_ids = []
         for line_val in line_vals:
@@ -41,7 +39,6 @@ class EstateProperty(models.Model):
                 'name': line_val['name'],
                 'quantity': line_val['quantity'],
                 'price_unit': line_val['price_unit'],
-                'account_id': line_val['account_id'],
             })
             invoice_line_ids.append(line.id)
 
