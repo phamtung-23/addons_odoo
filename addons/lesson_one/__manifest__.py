@@ -14,5 +14,6 @@
         'views/product_views.xml',
         'views/category_views.xml',
         'views/task_views.xml',
+        'report/my_module_report_template.xml',
     ],
 }
