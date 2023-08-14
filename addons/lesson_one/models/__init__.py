@@ -5,3 +5,4 @@
 from . import my_module
 from . import catagory
 from . import product
+from . import task

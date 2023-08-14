@@ -13,5 +13,6 @@
         'views/my_module_views.xml',
         'views/product_views.xml',
         'views/category_views.xml',
+        'views/task_views.xml',
     ],
 }
