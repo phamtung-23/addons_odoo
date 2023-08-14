@@ -15,5 +15,6 @@
         'views/category_views.xml',
         'views/task_views.xml',
         'report/my_module_report_template.xml',
+        'report/inherit_qweb_template.xml'
     ],
 }
