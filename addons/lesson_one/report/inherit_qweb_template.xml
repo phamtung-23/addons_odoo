@@ -15,7 +15,7 @@
                     priority: <p t-esc="doc.priority"/>
                 </div>
                 <div>
-                    stage: <p t-esc="doc.stage"/>
+                    stage: <p t-esc="doc.stage"/> 
                 </div>
             </div>
         </xpath>

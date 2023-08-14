@@ -23,6 +23,20 @@
         </t>
     </template>
 
+    <record id="task_custom_report_paperformat" model="report.paperformat">
+        <field name="name">Task custom Paper Format</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="margin_top">5</field>
+        <field name="margin_bottom">5</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
     <record id="my_module_report_task" model="ir.actions.report">
         <field name="name">Report task</field>
         <field name="model">my.module.task</field>
@@ -32,6 +46,7 @@
         <field name="print_report_name">'Report_task'</field>
         <field name="binding_model_id" ref="model_my_module_task"/>
         <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="task_custom_report_paperformat"></field>
     </record>
 
 </odoo>
