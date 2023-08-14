@@ -10,6 +10,9 @@
                 <field name="date"/>
                 <field name="amount"/>
                 <field name="active"/>
+                <field name="title"/>
+                <field name="author"/>
+                <field name="genre"/>
             </tree>
         </field>
     </record>
@@ -18,12 +21,27 @@
         <field name="model">my.module</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_activate" string="Activate" type="object" class="oe_highlight"/>
+                    <button name="action_deactivate" string="Deactivate" type="object" class="btn btn-danger"/>
+                    <button name="action_genre" string="Fantasy" type="object" class="btn btn-success" icon="fa-check" />
+                </header>
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="date"/>
-                        <field name="amount"/>
-                        <field name="active"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="date"/>
+                            <field name="amount"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="title"/>
+                            <field name="author"/>
+                            <field name="publication_date"/>
+                            <field name="genre"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
