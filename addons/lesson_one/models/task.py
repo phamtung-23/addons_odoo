@@ -34,3 +34,6 @@ class Task(models.Model):
     
     def button_done(self):
         self.write({'stage': 'done'})
+
+    def print_report_pdf(self):
+        return self.env.ref("lesson_one.my_module_report_task").report_action(self)

@@ -2,7 +2,7 @@
 
 {
     'name': 'estate account',
-    'version': '1.0',
+    'version': '1.1',
     'summary': 'This is Estate Account module!',
     'description': "Estate Account module",
     "depends": [

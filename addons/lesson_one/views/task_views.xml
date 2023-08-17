@@ -19,6 +19,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
+                    <button name="print_report_pdf" string="export report pdf" type="object" class="oe_highlight"/>
                     <button name="button_start" string="Start"  type="object" class="btn btn-secondary" icon="fa-play" attrs="{'invisible': ['|', ('stage', '=', 'in_progress'), ('stage', '=', 'done')]}"/>
                     <button name="button_done" string="Done"  type="object" class="btn btn-success" icon="fa-check" attrs="{'invisible': ['|', ('stage', '=', 'to_do'), ('stage', '=', 'done')]}"/>
                     <field name="stage" widget="statusbar" statusbar_visible="to_do,in_progress,done"/>
