@@ -1,0 +1,6 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_my_module_user,my_module,model_my_module,,1,1,1,1
+access_my_module_category_user,my_module_category,model_my_module_category,,1,1,1,1
+access_my_module_product_user,my_module_product,model_my_module_product,,1,1,1,1
+access_my_module_task_user,my_module_task,model_my_module_task,,1,1,1,1
+

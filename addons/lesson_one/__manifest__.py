@@ -8,6 +8,7 @@
     'description': "lesson one",
     "depends": [],
     'data': [
+        'security/ir.model.access.csv',
         'views/my_module_action.xml',
         'views/my_module_menus.xml',
         'views/my_module_views.xml',
