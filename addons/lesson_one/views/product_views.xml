@@ -9,6 +9,7 @@
                 <field name="name"/>
                 <field name="category_id" widget='badge' />
                 <field name="description"/>
+                <field name="price"/>
             </tree>
         </field>
     </record>
@@ -19,12 +20,19 @@
             <form>
                 <sheet>
                     <group >
-                        <field name="name"/>
+                        <group>
+                            <field class="fs-1" name="name"/>
+                        </group>
+                        <group>
+                            <field name="image_html" readonly="1" widget="html"/>
+                        </group>
                     </group>
                     <group>
                         <field name="category_id"  options="{'no_quick_create': True, 'no_create_edit' : True}"/>
-                    </group>
-                    <group>
+                        <field name="size" />
+                        <field name="material"/>
+                        <field name="price"/>
+                        <field name="image_url"/>
                         <field name="description"/>
                     </group>
                     
