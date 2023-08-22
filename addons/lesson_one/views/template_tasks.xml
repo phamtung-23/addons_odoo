@@ -1,31 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="task_assets_backend" name="my_module_task_assets" inherit_id="web.assets_backend">
-        <xpath expr="." position="inside">
-            <script type="text/javascript" src="/lesson_one/static/src/js/task.js"></script>
-        </xpath>
-    </template>
+    
     
     <template id="tasks_template">
         <t t-call="website.layout">
+            <!-- import javascript -->
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+            <script type="text/javascript" src="/lesson_one/static/src/js/popup.js"></script>  
+            <!-- main content -->
             <title>Task Template</title>
             <div class="oe_structure">
                 <div class='container mt-3'>
                     <h1 class="w-100 text-center">Task List</h1>
                     <div class="row" id="task-list">
                         
-                        <!-- <t t-foreach="products" t-as="product">
-                            <div class="col-4">
-                                <div class="card m-1 rounded shadow-sm" style="width: 18rem; height: 450px;">
-                                    <img t-attf-src="{{ product.image_url }}" class="card-img-top" alt="..."/>
-                                    <div class="card-body">
-                                        <h5 class="card-title"><t t-esc="product.name"/></h5>
-                                        <p class="card-text"><t t-esc="product.price"/></p>
-                                        <a t-attf-href="/products/{{ slug(product) }}" class="btn btn-primary">Detail</a>
-                                    </div>  
-                                </div>
-                            </div>
-                        </t> -->
+                        
                     </div>
                 </div>
             </div>

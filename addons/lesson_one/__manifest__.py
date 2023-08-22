@@ -2,11 +2,11 @@
  
 {
     'name': 'lesson one',
-    'version': '1.1',
+    'version': '1.4',
     'summary': 'This is module of lesson one!',
     'sequence': 10, 
     'description': "lesson one",
-    "depends": ['website'],
+    "depends": ['base','website','web','website_profile'],
     'data': [
         'security/ir.model.access.csv',
         'views/my_module_action.xml',
@@ -18,12 +18,14 @@
         'report/my_module_report_template.xml',
         'report/inherit_qweb_template.xml',
         'views/template_product.xml',
+        'views/template_menus.xml',
         'views/template_tasks.xml',
-        'views/template_menus.xml'
+        # 'views/assets.xml'
     ],
-    'assets': {
-        'web.assets_backend': [
-            'lesson_one/static/src/js/task.js',
-        ],
-    },
+    # 'assets': {
+    #     'web.assets_frontend': [
+    #         'lesson_one/static/src/js/popup.js']
+    #     }
+    
+    
 }
