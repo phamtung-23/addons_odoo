@@ -1,0 +1,6 @@
+a[target="_blank"][href^="https://www.odoo.com"] {
+    display: none;
+}
+a[href^="/web/database/manager"].border-end {
+    border-right: none !important;
+}

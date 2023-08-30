@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- <template id="template_logo_replaced" inherit_id="website.option_header_brand_logo">
+        <xpath expr="//a/span" position="replace">
+            <span t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name">
+                <img src="/coffeemug_base/static/src/img/logo.png" alt="logo.png"/>
+            </span>
+        </xpath>
+    </template>
+    <template id="copyright_logo" inherit_id="website.layout">
+        <xpath expr="//link[@rel='shortcut icon']" position="replace">
+            <link rel="shortcut icon" href="/coffeemug_base/static/src/img/favicon.ico" type="image/x-icon"/>
+        </xpath>
+        <xpath expr="//span[hasclass('o_footer_copyright_name')]" position="replace">
+            <span class="o_footer_copyright_name" data-name="Copyright">
+                @ 2023 SIRS System - All Rights Reserved 
+            </span>
+        </xpath>
+    </template> -->
+
+    <!-- custom login page -->
+    <!-- <template id="login" inherit_id="web.login" name="Custom Login" >
+        <xpath expr="//a[@href='/web/database/manager']" position="replace">
+            <img src="/coffeemug_base/static/src/img/logo.png" alt="logo.png"/>
+        </xpath>
+    </template> -->
+    <template id="custom_title" name="change title" inherit_id="web.layout">
+        <xpath expr="//title" position="replace">
+            <title>SIRS</title>
+        </xpath>
+    </template>
+    <template id="custom_favicon" name="Change Favicon" inherit_id="web.layout">
+        <xpath expr="//link[@rel='shortcut icon']" position="replace">
+            <link rel="shortcut icon" type="image/x-icon" href="/coffeemug_base/static/src/img/favicon.png"/>
+        </xpath>
+    </template>
+
+    <template id="custom_SwitchCompanyMenu" inherit_id="web.layout">
+        <xpath expr="//head" position="inside">
+            <script src="/coffeemug_base/static/src/js/edit_SwitchCompanyMenu.js" type="text/javascript" />
+        </xpath>
+    </template>
+
+</odoo>

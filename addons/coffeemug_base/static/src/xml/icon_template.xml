@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<templates xml:space="preserve"> 
+    <t t-name="systray_icon" owl="1">
+        <script src="/coffeemug_base/static/src/js/edit_name_company.js" type="text/javascript" />
+    </t>
+</templates>
