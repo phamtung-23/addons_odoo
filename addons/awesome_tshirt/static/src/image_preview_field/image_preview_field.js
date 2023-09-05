@@ -2,10 +2,19 @@
 
 import { registry } from "@web/core/registry";
 import { CharField } from "@web/views/fields/char/char_field";
+import { useCommand } from "@web/core/commands/command_hook";
 
 const { Component } = owl;
 
-class ImagePreviewField extends CharField {}
+class ImagePreviewField extends Component {
+    setup() {
+        super.setup();
+        useCommand(this.env._t('Open image in a new tab'), () => {
+            window.open(this.props.value, "_blank");
+            console.log('Open image in a new tab');
+        });
+    }
+}
 
 
 ImagePreviewField.template = "awesome_tshirt.ImagePreviewField";

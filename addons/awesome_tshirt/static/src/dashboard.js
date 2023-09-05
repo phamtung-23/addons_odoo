@@ -9,7 +9,7 @@ import { Card } from './card/card'
 import { PieChart } from "./pie_chart/pie_chart";
 import { sprintf } from "@web/core/utils/strings";
 
-const { Component, useSubEnv, onWillStart } = owl;
+const { Component, useSubEnv, onWillStart, useState  } = owl;
 
 
 
@@ -26,7 +26,8 @@ class AwesomeDashboard extends Component {
         };
 
         this.action = useService('action');
-        this.tshirtService = useService('tshirtService');
+        const tshirtService = useService("tshirtService");
+        this.statistics = useState(tshirtService.statistics);
 
         this.keyToString = {
             average_quantity: "Average amount of t-shirt by order this month",
@@ -36,9 +37,9 @@ class AwesomeDashboard extends Component {
             total_amount: "Total amount of new orders this month",
         }
 
-        onWillStart( async () => {
-            this.statistics = await this.tshirtService.loadStatistics();
-        })
+        // onWillStart( async () => {
+        //     this.statistics = await this.tshirtService.loadStatistics();
+        // })
     }
     openCustomerView(){
         this.action.doAction("base.action_partner_form");
