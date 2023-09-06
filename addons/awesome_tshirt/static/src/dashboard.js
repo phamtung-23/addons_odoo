@@ -8,6 +8,7 @@ import { Domain } from '@web/core/domain';
 import { Card } from './card/card'
 import { PieChart } from "./pie_chart/pie_chart";
 import { sprintf } from "@web/core/utils/strings";
+import { CustomerAutocomplete } from "./customer_autocomplete/customer_autocomplete";
 
 const { Component, useSubEnv, onWillStart, useState  } = owl;
 
@@ -75,7 +76,7 @@ class AwesomeDashboard extends Component {
         this.openOrders(title, domain);
     }
 }
-AwesomeDashboard.components = { Layout, Card, PieChart };
+AwesomeDashboard.components = { Layout, Card, PieChart, CustomerAutocomplete };
 AwesomeDashboard.template = 'awesome_tshirt.clientaction';
 
 registry.category("actions").add("awesome_tshirt.dashboard", AwesomeDashboard);
