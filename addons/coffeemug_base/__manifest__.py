@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Coffeemug Base',
-    'version': '1.1',
+    'version': '1.0.2',
     'category': 'Uncategorized',
     'summary': 'Replaces Odoo branding with custom SIRS branding',
     'description': """

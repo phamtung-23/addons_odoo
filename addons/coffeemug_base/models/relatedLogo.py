@@ -5,10 +5,10 @@ import base64
 import requests
 import os
 
-class RelateLogo(models.Model):
+class RelatedLogo(models.Model):
     _inherit = 'res.company'
 
-    def relate_logo_company(self):
+    def related_company_logo(self):
         first_company = self.search([], limit=1)
         if first_company:
             module_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

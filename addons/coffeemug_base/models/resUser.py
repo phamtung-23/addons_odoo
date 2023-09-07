@@ -5,7 +5,7 @@ import os
 class ResUsers(models.Model):
     _inherit = 'res.users'
 
-    def change_odoo_bot_name(self):
+    def update_odoo_bot_details(self):
         odoo_bot = self.env.ref('base.user_root')
         module_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         logo_path = os.path.join(module_path, 'static', 'src', 'img', 'SIRS_logo_color.png')

@@ -5,7 +5,6 @@ import { routeToUrl } from "@web/core/browser/router_service";
 import { browser } from "@web/core/browser/browser";
 const userMenuRegistry = registry.category("user_menuitems");
 
-console.log(userMenuRegistry);
 function debugItem(env) {
    const debugURL = $.param.querystring(window.location.href, 'debug=1');
    return {
