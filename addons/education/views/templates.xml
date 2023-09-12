@@ -1,0 +1,115 @@
+<odoo>
+    <!-- <template id="education_assets_frontend" >
+        <xpath expr="." position="inside">
+            <link href="/education/static/src/scss/education_style.scss" rel="stylesheet" type="text/scss"/>
+            <link href="/education/static/src/css/education_style.css" rel="stylesheet" type="text/css"/>
+            <script src="/education/static/src/js/education.js" type="text/javascript" />
+        </xpath>
+    </template> -->
+
+    <template id="course_template" >
+        <t t-call="website.layout">
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+            <link href="/education/static/src/css/education_style.css" rel="stylesheet" type="text/css"/>
+            <script src="/education/static/src/js/education.js" type="text/javascript" />
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+
+            <!-- ###### -->
+            <div class="oe_structure"/>
+            <div class="container">
+                <div class="oe_structure"/>    
+                <h2 class="mt-3 text-center">Courses</h2>
+                <div class="row">
+                    <t t-foreach="courses" t-as="course">
+                        <div class="col-3 p-2">
+                                <div class="card w-100">
+                                    <div class="card-img-top">
+                                        <a t-attf-href="/course/#{course.id}">
+                                            <img class="image-main rounded" t-if="course.image_url" t-att-src="course.image_url"/>
+                                        </a>
+                                    </div>
+                                    <div class="card-body" id="card_body">
+                                        <a t-attf-href="/course/#{course.id}">
+                                            <div t-field = "course.name" class="card-title fs-6"/>
+                                        </a>
+                                        <div class = "mt-1" id="tags">
+                                            <p t-field = "course.type_of_course" class="badge bg-danger"/>
+                                            <p t-field = "course.level_of_course" class="badge badge-success"/>
+                                        </div>
+                                        <p class="card-text fs-6">With <t t-esc = "course.number_of_lesson" /> lessons</p>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                    </t>
+                </div>
+                <div class="oe_structure"/>
+            </div>
+            <div class="oe_structure"/>
+        </t>
+
+   </template>
+   <!-- <record id="course_template_page" model="website.page">
+        <field name="name">Course page</field>
+        <field name="website_published">True</field>
+        <field name="url">/course</field>
+        <field name="view_id" ref="course_template"/>
+    </record> -->
+
+    <template id="course_detail" name="Courses Detail">
+        <t t-call="website.layout">
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+            <link href="/education/static/src/css/education_style.css" rel="stylesheet" type="text/css"/>
+            <script src="/education/static/src/js/education.js" type="text/javascript" />
+            <t t-foreach="courses" t-as="course">
+                <div class="oe_structure"/>
+                <!-- <section class="pt32 pb32" id="section_name_course">
+                    <div class="container text-center">
+                    <h1 class="text-dark"><t t-esc = "course.name"/></h1>
+                    <a href="#" class="btn btn-primary mt-1"
+                        style="box-shadow: 2px 2px 0px 0px rgba(255,255,255,1);">
+                        Đăng kí học
+                    </a>
+                    </div>
+                </section>
+                <div class="container mt-3">
+                    <div class="text-center">
+                        <img t-if="course.image_url" t-att-src="course.image_url" width="500px"/>
+                    </div>
+                </div>
+                <div class="container mt-3">
+                    <div class="text-center">
+                        <h4><b>Overview</b></h4>
+                    </div>
+                    <div t-field="course.html_description"/>
+                </div> -->
+                <div class="container mt-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="container text-left">
+                                <h3 class="text-dark"><t t-esc = "course.name"/></h3>
+                                <p t-field="course.html_description"/>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-center">
+                                <img class="rounded" t-if="course.image_url" t-att-src="course.image_url" width="400px"/>
+                                <h3 class="m-3"><b>Free</b></h3>
+                                <a href="#" class="btn btn-primary mt-1"
+                                    style="box-shadow: 2px 2px 0px 0px rgba(255,255,255,1);">
+                                    Start now
+                                </a>
+                            </div>
+                            <ul style="list-style-type:none;">
+                                <li><i class="fa fa-tachometer" aria-hidden="true"></i> <t t-esc="course.level_of_course"/></li>
+                                <li><i class="fa fa-tachometer" aria-hidden="true"></i> <t t-esc="course.type_of_course"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </t>
+        </t>
+    </template>
+</odoo>

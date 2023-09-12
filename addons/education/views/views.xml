@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Tree View -->
+        <record id="education_tree_view" model="ir.ui.view">
+            <field name="name">education.tree.view</field>
+            <field name="model">education</field>
+            <field name="arch" type="xml">
+                <tree string="Education">
+                    <field name="name"/>
+                    <field name="type_of_course"/>
+                    <field name="level_of_course"/>
+                    <field name="number_of_lesson"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="education_form_view" model="ir.ui.view">
+            <field name="name">education.form.view</field>
+            <field name="model">education</field>
+            <field name="priority" eval="7"/>
+            <field name="arch" type="xml">
+                <form string="Education Form">
+                    <sheet string="Education">
+                        <div class="container m-3 text-center fs-1">
+                            <h3>Education course</h3>
+                        </div>
+                        <group>
+                            <field name="name"/>
+                            <field name="image"/>
+                            <field name="status"/>
+                            <field name="is_free"/>
+                            <field name="price" attrs="{'invisible': [('is_free', '=', True)]}"/>
+                            <field name="type_of_course"/>
+                            <field name="level_of_course"/>
+                            <field name="number_of_lesson"/>
+                            <field name="html_description"/>
+                        </group>
+                    </sheet>
+                  
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Actions -->
+        <record id="action_education_view" model="ir.actions.act_window">
+            <field name="name">Education</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">education</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="education_tree_view"/>
+        </record>
+
+    </data>
+</odoo>

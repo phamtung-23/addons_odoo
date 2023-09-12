@@ -9,6 +9,7 @@ class RelatedLogo(models.Model):
     _inherit = 'res.company'
 
     def related_company_logo(self):
+        """Sets company logo"""
         first_company = self.search([], limit=1)
         if first_company:
             module_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,6 +22,7 @@ class RelatedLogo(models.Model):
             })
 
     def convert_image_to_base64(self, image_path):
+        """Utility to convert image to base64"""
         if os.path.isfile(image_path):
             with open(image_path, 'rb') as image_file:
                 return base64.b64encode(image_file.read())
