@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- menu product -->
-    <record id="menu_product_main" model="website.menu">
+    <!-- <record id="menu_product_main" model="website.menu">
         <field name="name">Course</field>
         <field name="url">/course</field>
         <field name="parent_id" search="[('parent_id', '=', False), ('website_id', '=', 1)]"/>
         <field name="sequence" type="int">10</field>
         <field name="website_id" ref="website.default_website"/>
-    </record>
+    </record> -->
 
     <!-- <record id="menu_product_list" model="website.menu">
         <field name="name">Product List</field>

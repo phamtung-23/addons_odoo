@@ -10,4 +10,21 @@
             <link rel="shortcut icon" type="image/x-icon" href="/coffeemug_base/static/src/img/favicon.png"/>
         </xpath>
     </template>
+
+
+    <record id="res_users_customizations_form" model="ir.ui.view">
+            
+        <field name="name">res.users.form.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="mail_bot_hr.res_users_view_form_preferences"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='odoobot_state']" position="replace">
+                <div></div>
+            </xpath>
+        </field>
+        
+    </record>
+    <!-- res.users.preferences.form -->
+    
 </odoo>
+

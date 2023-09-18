@@ -2,10 +2,10 @@
 <odoo>
 
     <template id="s_course_lessons" name="Course Lessons">
-        <section class="pt-3 pb-3">
+        <section class="course-lessons pt-3 pb-3">
             <div class="container">
                 <div class="media">
-                    <img class="mr-3" src="https://cdn.iconscout.com/icon/free/png-256/free-odoo-282678.png" alt="Generic placeholder image"/>
+                    <img class="mr-3" src="https://img.icons8.com/wired/50/000000/paper.jpg" alt="Generic placeholder image"/>
                     <div class="media-body">
                     <h5 class="mt-0">Lesson</h5>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.

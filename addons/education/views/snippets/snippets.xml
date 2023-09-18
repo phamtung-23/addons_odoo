@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="course_snippets" inherit_id="website.snippets">
+        <xpath expr="//div[@id='snippet_structure']" position="before">
+            <div id="snippet_structure" class="o_panel">
+                <div class="o_panel_header">My Snippets</div>
+                <div class="o_panel_body">
+                    <t t-snippet="education.s_course_lessons" t-thumbnail="/education/static/src/img/favicon.png">
+                        <keywords>lesson</keywords>
+                    </t>
+                    <t t-snippet="education.s_course_open" t-thumbnail="/education/static/src/img/favicon.png">
+                        <keywords>open, lesson</keywords>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="course_snippets_options" inherit_id="website.snippet_options"  name="Course Agents Options">
+        <xpath expr="//div[@data-js='Box']" position="after">
+            <div data-selector=".course-lessons">
+                <we-select string="Width">
+                    <we-button data-select-class="w-25">25%</we-button>
+                    <we-button data-select-class="w-50">50%</we-button>
+                    <we-button data-select-class="w-75">75%</we-button>
+                    <we-button data-select-class="w-100" data-name="so_width_100">100%</we-button>
+                </we-select>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

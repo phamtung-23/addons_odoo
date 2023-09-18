@@ -13,7 +13,7 @@
     'author': "School of Thought",
     'website': "http://www.yourcompany.com",
 
-    'version': '0.1',
+    'version': '0.0.2',
 
     # any module necessary for this one to work correctly
     'depends': ['base','website'],
@@ -26,9 +26,19 @@
         'views/menus.xml',
         'views/template_menus.xml',
         'views/templates.xml',
-        'views/s_course_lessons.xml',
-        'views/snippets.xml',
+        'views/snippets/s_course_lessons.xml',
+        'views/snippets/s_course_open.xml',
+        'views/snippets/snippets.xml',
 
     ],
+    'assets': {
+        'web.assets_backend': [
+            '/education/static/src/js/get_course_open.js',
+        ],
+        'web.assets_frontend_lazy': [
+            '/education/static/src/js/get_course_open.js',
+        ],
+        
+    }
    
 }

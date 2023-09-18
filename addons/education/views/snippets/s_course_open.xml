@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="s_course_open" name="Course Open">
+        <section class="course-open pt-3 pb-3">
+            <div class="container">
+                <h4 class="text-left">Free courses</h4>
+                <div class="row" id="course_open_row">
+                    <h6>Loading...</h6>
+                    <!-- render js -->
+                </div>
+            </div>
+        </section>
+    </template>
+
+</odoo>
