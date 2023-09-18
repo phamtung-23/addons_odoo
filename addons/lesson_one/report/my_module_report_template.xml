@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="my_module_layout">
+
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>            
+
+        <div class="header">
+            <div class="text-center" style="border-bottom:1px solid black;">
+                <div class="row">
+                    <div class="col-4 text-start">
+                        <img alt="image.png" t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="width:100px; height:100px;"/>
+                    </div>
+                    <div class="col-4">
+                        <p t-out="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M:%S')"/>
+                    </div>
+                    <div class="col-4 text-end">
+                        <span t-if="company.company_details" t-field="company.company_details"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article o_report_layout_standard">
+            <t t-out="0"/>
+        </div>
+        <div class="footer o_standard_footer">
+             <div class="text-center" style="border-top:1px solid black;">
+                <div class="row">
+                    <div class="col-4">
+                        <p t-field="company.email" />
+                    </div>
+                    <div class="col-4">
+                        <p t-field="company.phone" />
+                        <p t-field="company.mobile" />
+                    </div>
+                    <div class="col-4 text-info">
+                        <p t-field="company.website" />
+                    </div>
+                </div>
+                <br/>
+                <p>Page <span class="page"/> / <span class="topage"/></p>
+            </div>
+        </div>
+    </template>
+
+    <template id="my_module_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="lesson_one.my_module_layout">
+                    <div>
+                        <h2 class="text-center" t-field="doc.title"/>
+                        <div class="text-center" style="border-bottom:1px solid black;">
+                            Description: <span t-field="doc.description"/>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 text-center mt-5">
+                                Priority: <p t-field="doc.priority" />
+                            </div>
+                            <div class="col-4 text-center mt-5">
+                                Stage: <p t-field="doc.stage" />
+                            </div>
+                            <div class="col-4 text-center mt-5">
+                                Deadline: <p t-field="doc.date_deadline" />
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>        
+        </t>
+    </template>
+
+    <template id="sub_report_template">
+        <t t-call="web.external_layout">
+            <div class='page'>
+                <h1>Hello sub_template!!!!</h1>
+                <h1 t-field="doc.title"/>
+                <h2 t-field="doc.title"/>
+                <h3 t-field="doc.title"/>
+                <h4 t-field="doc.title"/>
+                <h5 t-field="doc.title"/>
+                <h6 t-field="doc.title"/>
+            </div>
+        </t>
+    </template>
+
+    <!-- <record id="task_custom_report_paperformat" model="report.paperformat">
+        <field name="name">Task custom Paper Format</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="margin_top">5</field>
+        <field name="margin_bottom">5</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record> -->
+
+    <record id="my_module_report_task" model="ir.actions.report">
+        <field name="name">Report task custom</field>
+        <field name="model">my.module.task</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">lesson_one.my_module_report_template</field>
+        <field name="report_file">lesson_one.my_module_report_template</field>
+        <field name="print_report_name">'Report_task'</field>
+        <field name="binding_model_id" ref="model_my_module_task"/>
+        <field name="binding_type">report</field>
+        <!-- <field name="paperformat_id" ref="task_custom_report_paperformat"></field> -->
+    </record>
+
+</odoo>

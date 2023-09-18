@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menu for estate.property -->
+    <menuitem id="my_module_menu" name="My_Module" sequence="10"/>
+    <menuitem id="my_module_menu_1" name="My_Module_submenu" parent="my_module_menu" sequence="10"/>
+    <menuitem id="my_module_menu_2" name="My_Module_item" action="my_module_action" parent="my_module_menu_1" sequence="10"/>
+
+    <!-- Menu for my.module.product -->
+    <menuitem id="my_module_product_1" name="Product" parent="my_module_menu" sequence="10"/>
+    <menuitem id="my_module_product_2" name="Product list" action="product_action" parent="my_module_product_1" sequence="10"/>
+
+    <!-- menu for my.module.category -->
+    <menuitem id="my_module_category_1" name="Category" parent="my_module_menu" sequence="10"/>
+    <menuitem id="my_module_category_2" name="Category list" action="category_action" parent="my_module_category_1" sequence="10"/>
+
+    <!-- menu for my.module.task -->
+    <menuitem id="my_module_task_1" name="Task" parent="my_module_menu" sequence="10"/>
+    <menuitem id="my_module_task_2" name="Task list" action="task_action" parent="my_module_task_1" sequence="10"/>
+</odoo>
