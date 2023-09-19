@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- tree view -->
+  
+  <record id="shop_managerment_view_tree" model="ir.ui.view">
+    <field name="name">shop.managerment.view.tree</field>
+    <field name="model">shop.managerment</field>
+    <field name="arch" type="xml">
+      <tree string="Shop">
+        <field name="name"/>
+        <field name="code"/>
+        <field name="status"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- form view -->
+
+  <record id="shop_managerment_view_form" model="ir.ui.view">
+    <field name="name">shop.managerment.view.form</field>
+    <field name="model">shop.managerment</field>
+    <field name="arch" type="xml">
+      <form string="Shop">
+        <sheet>
+          <group>
+            <group>
+              <field name="name"/>
+              <field name="code"/>
+              <field name="shop_type_id"/>
+              <field name="status"/>
+            </group>
+            <group>
+              <field name="parent_region_id"/>
+              <field name="region_id"/>
+              <field name="city_id"/>
+              <field name="district_id"/> 
+            </group>
+          </group>
+          <group>
+            <field name="address"/>
+            <field name="latitude"/>
+            <field name="longitude"/>
+          </group>
+          <group>
+            <field name="channel_id"/>
+          </group>
+          <div class="w-100">
+            <img class="w-100" src="https://developers.google.com/static/codelabs/maps-platform/maps-platform-101-js/img/e52623cb8578d625.png" />
+          </div>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  
+
+  <record id="shop_managerment_view_search" model="ir.ui.view">
+    <field name="name">shop.managerment.view.search</field>
+    <field name="model">shop.managerment</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="name"/>
+        <field name="code"/>
+        
+        <filter name="active" string="Active" domain="[('status','=','active')]"/>
+        <filter name="inactive" string="Inactive" domain="[('status','=','inactive')]"/>
+      </search>
+    </field>
+  </record>
+
+</odoo>

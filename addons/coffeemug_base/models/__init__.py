@@ -2,4 +2,3 @@
 
 from . import relatedLogo
 from . import resUser
-from . import resFields

@@ -5,8 +5,6 @@ import os
 class ResUsers(models.Model):
     _inherit = 'res.users'
 
-
-    department_name = fields.Char(string="Department")
     def update_odoo_bot_details(self):
         """Sets icon, name, email for Odoo Bot user"""
         odoo_bot = self.env.ref('base.user_root')

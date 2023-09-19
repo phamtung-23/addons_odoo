@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_managerment_action" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product.managerment</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_active': True}</field>
+    </record>
+
+    <record id="channel_managerment_action" model="ir.actions.act_window">
+        <field name="name">Channel</field>
+        <field name="res_model">channel.managerment</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="shop_type_managerment_action" model="ir.actions.act_window">
+        <field name="name">Shop Type</field>
+        <field name="res_model">shop.type.managerment</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="parent_regions_managerment_action" model="ir.actions.act_window">
+        <field name="name">Parent Regions</field>
+        <field name="res_model">parent.regions.managerment</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="regions_managerment_action" model="ir.actions.act_window">
+        <field name="name">Regions</field>
+        <field name="res_model">regions.managerment</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+    
+    <record id="district_managerment_action" model="ir.actions.act_window">
+        <field name="name">District</field>
+        <field name="res_model">district.managerment</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="city_managerment_action" model="ir.actions.act_window">
+        <field name="name">City</field>
+        <field name="res_model">city.managerment</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+  <record id="shop_managerment_action" model="ir.actions.act_window">
+    <field name="name">Shops</field>
+    <field name="res_model">shop.managerment</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+</odoo>

@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+product_managerment_access,product_managerment,model_product_managerment,base.group_user,1,1,1,1
+channel_managerment_access,channel_managerment,model_channel_managerment,base.group_user,1,1,1,1
+city_managerment_access,city_managerment,model_city_managerment,base.group_user,1,1,1,1
+district_managerment_access,district_managerment,model_district_managerment,base.group_user,1,1,1,1
+parent_regions_managerment_access,parent_regions_managerment,model_parent_regions_managerment,base.group_user,1,1,1,1
+regions_managerment_access,regions_managerment,model_regions_managerment,base.group_user,1,1,1,1
+shop_type_managerment_access,shop_type_managerment,model_shop_type_managerment,base.group_user,1,1,1,1
+shop_managerment_access,shop_managerment,model_shop_managerment,base.group_user,1,1,1,1

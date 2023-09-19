@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- menu for product item -->
+    <menuitem id="managerment_menu" name="Managerment" sequence="10"/>
+    <menuitem id="product_managerment_menu_1" name="Products" action="product_managerment_action" parent="managerment_menu" sequence="10"/>
+
+    <!-- menu for channel item -->
+    <menuitem id="channel_managerment_menu" name="Channel" action="channel_managerment_action" parent="managerment_menu" sequence="15"/>
+
+    <!-- menu for shop type item -->
+    <menuitem id="shop_type_managerment_menu" name="Shop Type" action="shop_type_managerment_action" parent="managerment_menu" sequence="20"/>
+
+    <!-- menu for parent regions item -->
+    <menuitem id="parent_regions_managerment_menu" name="Parent Regions" action="parent_regions_managerment_action" parent="managerment_menu" sequence="25"/>
+
+    <!-- menu for regions item -->
+    <menuitem id="regions_managerment_menu" name="Regions" action="regions_managerment_action" parent="managerment_menu" sequence="30"/>
+
+    <!-- menu for city item -->
+    <menuitem id="city_managerment_menu" name="City" action="city_managerment_action" parent="managerment_menu" sequence="35"/>
+    
+    <!-- menu for district item -->
+    <menuitem id="district_managerment_menu" name="District" action="district_managerment_action" parent="managerment_menu" sequence="40"/>
+
+    <!-- menu for shop item -->
+    <menuitem id="shop_managerment_menu" name="Shops" action="shop_managerment_action" parent="managerment_menu" sequence="45"/>
+
+</odoo>
